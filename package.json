@@ -1,0 +1,42 @@
+{
+  "name": "syns-store",
+  "version": "1.0.0",
+  "description": "Syns Store Landing",
+  "author": "",
+  "license": "GPLv3",
+  "scripts": {
+    "clean": "rimraf dist/{css/*,js/*,images/*}",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
+    "scss": "node-sass --output-style compressed -o dist/css src/scss",
+    "lint": "eslint src/js",
+    "lint-scss": "stylelint src/scss/*.scss",
+    "uglify": "mkdirp dist/js -p && uglifyjs src/js/*.js -m -c -o dist/js/main.min.js",
+    "imagemin": "imagemin src/images/* -o dist/images",
+    "serve": "browser-sync start --server --files \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html\"",
+    "build:css": "run-s lint-scss scss autoprefixer",
+    "build:js": "run-s lint uglify",
+    "build:images": "run-s imagemin",
+    "build": "run-s build:*",
+    "watch:css": "onchange \"src/scss\" -- run-s build:css",
+    "watch:js": "onchange \"src/js\" -- run-s build:js",
+    "watch:images": "onchange \"src/images\" -- run-s build:images",
+    "watch": "run-p serve watch:*",
+    "postinstall": "run-s build watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
+    "eslint": "^8.44.0",
+    "imagemin-cli": "^7.0.0",
+    "mkdirp": "^3.0.1",
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^10.1.0",
+    "rimraf": "^5.0.1",
+    "stylelint": "^15.10.1",
+    "uglify-es": "^3.3.10"
+  },
+  "homepage": "https://bitbucket.org/pasqualevitiello/switch#readme",
+  "main": ".eslintrc.js"
+}
