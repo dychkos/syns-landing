@@ -32,8 +32,9 @@
 	}
 }
 
-.header-illustration-image {
-	display: none;
+.header-bg-img {
+	position: absolute;
+	left: -808px;
 }
 
 .hero-media {
@@ -59,10 +60,15 @@
 	margin: 0 auto;
 	box-shadow: 48px 16px 48px rgba(color(bg, 1i), .12);
 	border-radius: 4px;
+	width: 460px;
 	transform: perspective(1000px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg) scaleY(.95) translatex(2%);
 
 	.lights-off & {
 		box-shadow: 48px 16px 48px rgba(darken(color(bg, 1i), 35%), .2);
+	}
+	& img {
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -145,7 +151,7 @@
 		display: block;
 		position: absolute;
 		top: -168px;
-		left: -722px;
+		left: -810px;
 		width: 1440px;
 		height: 324px;
 	}

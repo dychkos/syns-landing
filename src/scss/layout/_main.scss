@@ -2,6 +2,10 @@
     background: color(bg, 3);
 }
 
+body {
+	scroll-behavior: smooth;
+}
+
 .body-wrap {
     background: color(bg, 1);
     overflow: hidden;
