@@ -12,6 +12,7 @@
 
     &::placeholder {
         color: color(typography, 2);
+		opacity: 0.6;
     }
 
     &::-ms-input-placeholder {
@@ -43,6 +44,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
+	width: 230px;
 	font-size: 14px;
 }
 

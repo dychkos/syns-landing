@@ -5,7 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Тримач для смартфону | Syns</title>
-	<link href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="dist/css/style.css">
 	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +40,83 @@
 						<h1 class="hero-title mt-0">Сенсорний автомобільний тримач</h1>
 						<p class="hero-paragraph">З функцією бездротової зарядки призначений для зручного використання
 							смартфона у автомобілі.</p>
+
+						<div class="timer-wrap">
+							<div class="timer">
+								<div class="countdown fc">
+									<div class="callout">
+										<div class="now">Зараз</div>
+										<div class="price">
+											<div>400</div><span>грн</span>
+										</div>
+										<div class="sub">Замість <br> 650<span>грн</span></div>
+										<div class="timeout">
+											<h1>Time up</h1>
+										</div>
+									</div>
+									<h2 class="mb-16">Знижка 😁</h2>
+									<div class="numbers fr">
+										<div class="mins tens">
+											<div class="numlist">
+												<div class="num">0</div>
+												<div class="num">9</div>
+												<div class="num">8</div>
+												<div class="num">7</div>
+												<div class="num">6</div>
+												<div class="num">5</div>
+												<div class="num">4</div>
+												<div class="num">3</div>
+												<div class="num">2</div>
+												<div class="num">1</div>
+												<div class="num">0</div>
+											</div>
+										</div>
+										<div class="mins ones">
+											<div class="numlist">
+												<div class="num">0</div>
+												<div class="num">9</div>
+												<div class="num">8</div>
+												<div class="num">7</div>
+												<div class="num">6</div>
+												<div class="num">5</div>
+												<div class="num">4</div>
+												<div class="num">3</div>
+												<div class="num">2</div>
+												<div class="num">1</div>
+												<div class="num">0</div>
+											</div>
+										</div>
+										<div class="seperator">:</div>
+										<div class="secs tens">
+											<div class="numlist">
+												<div class="num">0</div>
+												<div class="num">5</div>
+												<div class="num">4</div>
+												<div class="num">3</div>
+												<div class="num">2</div>
+												<div class="num">1</div>
+												<div class="num">0</div>
+											</div>
+										</div>
+										<div class="secs ones">
+											<div class="numlist">
+												<div class="num">0</div>
+												<div class="num">9</div>
+												<div class="num">8</div>
+												<div class="num">7</div>
+												<div class="num">6</div>
+												<div class="num">5</div>
+												<div class="num">4</div>
+												<div class="num">3</div>
+												<div class="num">2</div>
+												<div class="num">1</div>
+												<div class="num">0</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="hero-cta">
 							<a class="button button-primary" href="#sheetdb-form">Придбати</a>
 							<div class="lights-toggle">
@@ -169,58 +249,52 @@
 							<div class="row g-1">
 								<label class="label-block">
 									Ім'я
-									<input type="text" class="input" name="data[First name]" placeholder="Іван">
+									<input type="text" required class="input" id="first-name" name="data[First name]" placeholder="Іван">
 								</label>
 								<label class="label-block">
 									Прізвище
-									<input type="text" class="input" name="data[Last name]" placeholder="Іванов">
+									<input type="text" required class="input" id="last-name" name="data[Last name]" placeholder="Іванов">
 								</label>
 							</div>
 							<div class="row">
 								<label class="label-block">
 									Номер телефону
-									<input maxlength="12" required class="input" name="data[Phone]" type="tel"
-										   placeholder="380880000000">
+									<input maxlength="12" id="phone" required class="input" name="data[Phone]" type="tel"
+										   placeholder="380XX0000000">
 								</label>
 							</div>
 							<div class="row">
 								<label class="label-block">
 									Вкажи місто
-									<select class="selectpicker" id="order-cities" name="data[City]"
+									<select id="order-cities" name="data[City]"
 											data-show-subtext="false" data-live-search="true">
 										<option value="">Select</option>
-										<option value='Anaesthesia'>Anaesthesia</option>
-										<option value='Anatomy and Physiology'>Anatomy and Physiology</option>
-										<option value='Cardiology'>Cardiology</option>
-										<option value='Clinical Skills'>Clinical Skills</option>
-										<option value='Surgery'>Surgery</option>
-										<option value='Urology'>Urology</option>
 									</select>
 								</label>
 							</div>
 							<div class="row">
-								<label class="label-block">
+								<label class="label-block" id="warehouses">
 									Обери віділення
-									<select class="selectpicker" id="order-warehouses" name="data[Warehouse]"
+									<select id="order-warehouses" name="data[Warehouse]"
 											data-show-subtext="false" data-live-search="true">
-										<option value="">Select</option>
-										<option value='Anaesthesia'>Anaesthesia</option>
-										<option value='Anatomy and Physiology'>Anatomy and Physiology</option>
-										<option value='Cardiology'>Cardiology</option>
-										<option value='Clinical Skills'>Clinical Skills</option>
-										<option value='Surgery'>Surgery</option>
-										<option value='Urology'>Urology</option>
+
 									</select>
 								</label>
 							</div>
+							<span class="error hide">
+								Заповніть всі поля!
+							</span>
 							<div class="cta-cta">
-								<button class="button button-primary" type="submit">Buy it now</button>
+								<button class="button button-primary" type="submit">Придбати</button>
 							</div>
 						</form>
 					</div>
 				</div>
+
 			</div>
+
 		</section>
+
 	</main>
 
 	<footer class="site-footer has-top-divider">
@@ -278,8 +352,9 @@
 	</footer>
 </div>
 
-<script src="dist/js/main.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="dist/js/main.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 </body>
