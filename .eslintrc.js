@@ -6,7 +6,10 @@ module.exports = {
 		jest: true,
 	},
   globals: {
-    '$': true
+    '$': true,
+    'Odometer': true,
+    'TweenMax': true,
+    'Elastic': true
   },
   "parserOptions": {
     "ecmaVersion": 8

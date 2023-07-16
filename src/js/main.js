@@ -26,7 +26,7 @@ form.addEventListener("submit", e => {
   // let json = JSON.stringify(object);
   fetch(form.action, {
     method: "POST",
-    body: new FormData(document.getElementById("sheetdb-form")),
+    body: formData,
   }).then(
     response => response.json()
   ).then(() => {
@@ -100,6 +100,8 @@ function checkLights() {
     }
   }
 }
+
+// ----- On render -----
 
 /*ORDER*/
 
@@ -277,5 +279,4 @@ function formatResults(res) {
 }
 
 initForm();
-
 // loadWarehousesAPI('0e451e40-4b3a-11e4-ab6d-005056801329');
